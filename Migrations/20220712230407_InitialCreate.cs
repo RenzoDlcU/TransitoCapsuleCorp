@@ -20,8 +20,10 @@ namespace TransitoCapsuleCorp.Migrations
                     AlturaVuelo = table.Column<int>(type: "int", nullable: false),
                     Velocidad = table.Column<int>(type: "int", nullable: false),
                     Matricula = table.Column<string>(type: "nvarchar(6)", maxLength: 6, nullable: false),
-                    Ciudad = table.Column<int>(type: "int", nullable: false),
-                    TipoAuto = table.Column<int>(type: "int", nullable: false)
+                    TipoAuto = table.Column<int>(type: "int", nullable: false),
+                    Ciudad = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Valida = table.Column<bool>(type: "bit", nullable: false),
+                    Distancia = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
                 {

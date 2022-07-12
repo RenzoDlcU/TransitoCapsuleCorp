@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-
+using TransitoCapsuleCorp.Services;
 using TransitoCapsuleCorp;
 
 
@@ -14,6 +14,8 @@ builder.Services.AddSwaggerGen();
 
 var connectionString = builder.Configuration.GetConnectionString("cndev");
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
+
+builder.Services.AddScoped<IMultaService, MultaService>();
 
 var app = builder.Build();
 

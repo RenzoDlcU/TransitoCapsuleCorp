@@ -21,8 +21,10 @@ public class ApplicationDbContext : DbContext
             multa.Property(p => p.AlturaVuelo).IsRequired();
             multa.Property(p => p.Velocidad).IsRequired();
             multa.Property(p => p.Matricula).IsRequired().HasMaxLength(6);
-            multa.Property(p => p.Ciudad).IsRequired();
+            multa.Property(p => p.Ciudad).IsRequired().HasMaxLength(100);
             multa.Property(p => p.TipoAuto).IsRequired();
+            multa.Property(p => p.Valida).IsRequired();
+            multa.Property(p => p.Distancia);
         });
     }
 }

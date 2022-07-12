@@ -11,7 +11,7 @@ using TransitoCapsuleCorp;
 namespace TransitoCapsuleCorp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220712181022_InitialCreate")]
+    [Migration("20220712230407_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,8 +34,13 @@ namespace TransitoCapsuleCorp.Migrations
                     b.Property<int>("AlturaVuelo")
                         .HasColumnType("int");
 
-                    b.Property<int>("Ciudad")
-                        .HasColumnType("int");
+                    b.Property<string>("Ciudad")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<double>("Distancia")
+                        .HasColumnType("float");
 
                     b.Property<string>("Imagen")
                         .IsRequired()
@@ -55,6 +60,9 @@ namespace TransitoCapsuleCorp.Migrations
 
                     b.Property<int>("TipoAuto")
                         .HasColumnType("int");
+
+                    b.Property<bool>("Valida")
+                        .HasColumnType("bit");
 
                     b.Property<int>("Velocidad")
                         .HasColumnType("int");
