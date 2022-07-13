@@ -19,10 +19,11 @@ public class MultaController : ControllerBase
     [Route("multas")]
     public IActionResult Get()
     {
-        MultasResponse multas = new MultasResponse();
-        multas.multasInvadas = multaService.Get().Where(x => !x.Valida);
-        multas.multasValidas = multaService.Get().Where(x => x.Valida);
-        return Ok(multas);
+        // MultasResponse multas = new MultasResponse();
+        // multas.multasInvadas = multaService.Get().Where(x => !x.Valida);
+        // multas.multasValidas = multaService.Get().Where(x => x.Valida);
+        // return Ok(multas);
+        return Ok("Hola Despliegue");
     }
 
     [HttpGet]
